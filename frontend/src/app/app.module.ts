@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
@@ -10,12 +11,13 @@ import { StageComponent } from './stage/stage.component';
   declarations: [
     AppComponent,
     ProfileEditorComponent,
-    StageComponent
+    StageComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
