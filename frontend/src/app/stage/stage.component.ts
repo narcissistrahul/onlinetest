@@ -1,5 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { DataService } from '../data.service';
+import { Question } from './d'
 
 @Component({
   selector: 'app-stage',
@@ -7,20 +8,26 @@ import { DataService } from '../data.service';
   styleUrls: ['./stage.component.css']
 })
 export class StageComponent implements OnInit, OnDestroy {
+  @ViewChild('question') questionElem?: ElementRef;
 
   constructor(private data:DataService) { 
   }
 
   getQuiz$:any;
-  quizItem:any;
+  quizQuestions:any;
 
   ngOnInit(): void {
     this.data.print();
     this.getQuiz$ = this.data.getQuiz().subscribe((data)=>{
-      console.log(data);
-      this.quizItem = JSON.stringify(data);
+     this.quizQuestions = data;
     })
   }
+  ngAfterViewInit(){
+    console.log(this.questionElem?.nativeElement);
+  } 
+  checkAnswers(e:any){
+    console.log("Use details from event, ", e);
+    }
 
   ngOnDestroy(): void {
     this.getQuiz$.unsubscribe();
