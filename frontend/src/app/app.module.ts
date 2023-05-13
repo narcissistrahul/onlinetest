@@ -5,15 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
-import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 import { StageComponent } from './stage/stage.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { QuizComponent } from './quiz/quiz.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileEditorComponent,
     StageComponent,
+    QuizComponent,
   ],
   imports: [
     BrowserModule,

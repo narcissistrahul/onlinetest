@@ -1,0 +1,36 @@
+<div class="page-wrap" ng-app='quiz'>
+    <section>
+        <div class="well">
+            <div class="quiz">
+                <!--      questions      -->
+                <ng-container *ngIf="!end">
+                    <div class="quiz__item" *ngFor="let quizItem of quizList, index as index">
+                        <div class="fade-left" *ngIf="index === current">
+                            <h3 class="question">{{quizItem.question}}</h3>
+                            <div class="answers">
+                                <div *ngFor="let answer of quizItem.answer, index as index" class="answers__item">
+                                    <input type="radio" id="quiz{{current}}{{index}}" value="{{answer}}"
+                                        (click)="pushResults($event, quizItem, answer)" />
+                                    <label for="quiz{{current}}{{index}}">{{answer}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+
+                <!--      results      -->
+                <div class="results fade-in-out" *ngIf="end">
+                    <ul>
+                        <li *ngFor="let result of results" [ngClass]="result.correct ? 'bg-success' : 'bg-danger'">
+                            <p>Question: {{result.question}}</p>
+                            <p>Answer : {{result.answer}}</p>
+                            <p>Correct : {{result.correct}}</p>
+                        </li>
+                    </ul>
+                    <button class="btn btn-primary" (click)="restart()">RESTART QUIZ</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

@@ -1,14 +1,15 @@
 <h3>Questions:</h3>
 
 <div>
-    <ol #question>
+    <ol>
         <li *ngFor="let quiz of quizQuestions, index as q">
             {{quiz.question}}<br />
             <label class="choice" *ngFor="let choice of quiz.choices, index as i" for="{{choice}}">
                 {{choice}}
-                <input type="radio" id="{{choice}}" name="{{q}}" value="{{choice}}" (change)="checkAnswers($event)">
+                <input type="radio" id="{{choice}}" name="{{q}}" value="{{choice}}"
+                    (change)="addNewItem(quiz.id,choice)">
             </label>
-
         </li>
     </ol>
+    <div>{{answers}}</div>
 </div>

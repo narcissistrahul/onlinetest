@@ -18,4 +18,8 @@ export class DataService {
     return this.http.get<any>('http://localhost:3000');
   }
 
+  getQuizList(){
+    return this.http.get<any>('http://localhost:3000/quizlist');
+  }
+
 }
