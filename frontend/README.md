@@ -8,5 +8,5 @@ This will start the back-end and `http://localhost:4200/`.
 
 ## Editing questions
 Questions are served from a back-end written in Express on the /quizlist route.
-Navigate to `index.js` on `backend` folder for `quizlist` object and edit questions.
+Navigate to `index.js` on `backend` folder for `quizlist` object and edit questions on the object.
 These questions are served from this endpoint at the load of Quiz component on front-end.
