@@ -2,16 +2,11 @@
 Project which enables business to conduct examinations online and let's users attempt quizes.
 
 ## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+From the repo root, navigate to 'frontend' using 'cd frontend' on a terminal.
+Run `npm run start` for a dev server.
+This will start the back-end and `http://localhost:4200/`.
 
-## Code scaffolding
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Editing questions
+Questions are served from a back-end written in Express on the /quizlist route.
+Navigate to `index.js` on `backend` folder for `quizlist` object and edit questions.
+These questions are served from this endpoint at the load of Quiz component on front-end.

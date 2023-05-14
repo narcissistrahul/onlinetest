@@ -7,18 +7,5 @@ export type EditorType = 'name' | 'profile';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'OnlineTest';
-  editor: EditorType = 'name';
-
-  get showNameEditor() {
-    return this.editor === 'name';
-  }
-
-  get showProfileEditor() {
-    return this.editor === 'profile';
-  }
-
-  toggleEditor(type: EditorType) {
-    this.editor = type;
-  }
+  title = 'Online Test Portal'
 }

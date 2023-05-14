@@ -1,6 +1,6 @@
 <div class="page-wrap" ng-app='quiz'>
     <section>
-        <div class="m-5 p-5">
+        <div class="m-5">
             <div class="quiz">
                 <!--      questions      -->
                 <ng-container *ngIf="!end">
@@ -26,7 +26,7 @@
                 </ng-container>
 
                 <!--      results      -->
-                <div class="results m-5 p-5" [@inOutAnimation] *ngIf="end">
+                <div class="results m-5" [@inOutAnimation] *ngIf="end">
                     <h2>Here are your results:</h2>
                     <ul>
                         <li *ngFor="let result of results"
@@ -36,7 +36,7 @@
                             <p>Correct : {{result.correct ? "Yes" : "No"}}</p>
                         </li>
                     </ul>
-                    <button class="btn btn-primary" (click)="restart()">RESTART QUIZ</button>
+                    <button class="btn btn-warning" (click)="restart()">RESTART QUIZ</button>
                 </div>
             </div>
         </div>

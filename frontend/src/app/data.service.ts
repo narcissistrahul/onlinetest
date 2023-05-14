@@ -10,14 +10,6 @@ export class DataService {
 
   constructor(private http:HttpClient) { }
 
-  print = () => {
-    console.warn("I got called from Service.");
-  }
-
-  getQuiz(){
-    return this.http.get<any>('http://localhost:3000');
-  }
-
   getQuizList(){
     return this.http.get<any>('http://localhost:3000/quizlist');
   }
