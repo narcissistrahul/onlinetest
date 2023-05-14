@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 .quiz {
     &__item {
       .question {
         margin-top: 0;
         margin-bottom: 25px;
-        color: #28AEFD;
+        color: #1372aa;
       }
       .answers {
         padding-left: 15px;
@@ -66,7 +67,7 @@
   // *****************
   // Animations
   // *****************
-  .fade-in-out { 
+  /* .fade-in-out { 
     transform-origin: 50% 50%;
     transition: all 0.75s ease;
     opacity: 1;
@@ -107,10 +108,9 @@
         transform: translateX(-50px);
       }
     }
-  }
+  } */
   
   
   body {
-    font-family: 'Open Sans';
-    font-style: 18px;
+    font-family: 'Mulish', sans-serif;
   }

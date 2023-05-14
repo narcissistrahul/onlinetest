@@ -1,10 +1,17 @@
 <div class="page-wrap" ng-app='quiz'>
     <section>
-        <div class="well">
+        <div class="m-5 p-5">
             <div class="quiz">
                 <!--      questions      -->
                 <ng-container *ngIf="!end">
-                    <div class="quiz__item" *ngFor="let quizItem of quizList, index as index">
+                    <h2 style="color:#1372aa">
+                        Javascript Questions
+                    </h2>
+                    <h5>Please select your answer from the following multiple-choice questions. Each question has one
+                        answer.<br />Upon selecting your answer, you will move to the next question. After answering all
+                        questions, you will be provided with results.</h5>
+                    <br />
+                    <div class="quiz__item fade-in" [@inOutAnimation] *ngFor="let quizItem of quizList, index as index">
                         <div class="fade-left" *ngIf="index === current">
                             <h3 class="question">{{quizItem.question}}</h3>
                             <div class="answers">
@@ -19,12 +26,14 @@
                 </ng-container>
 
                 <!--      results      -->
-                <div class="results fade-in-out" *ngIf="end">
+                <div class="results m-5 p-5" [@inOutAnimation] *ngIf="end">
+                    <h2>Here are your results:</h2>
                     <ul>
-                        <li *ngFor="let result of results" [ngClass]="result.correct ? 'bg-success' : 'bg-danger'">
+                        <li *ngFor="let result of results"
+                            [ngClass]="result.correct ? 'bg-success bg-gradient bg-opacity-25' : 'bg-danger bg-gradient bg-opacity-25'">
                             <p>Question: {{result.question}}</p>
                             <p>Answer : {{result.answer}}</p>
-                            <p>Correct : {{result.correct}}</p>
+                            <p>Correct : {{result.correct ? "Yes" : "No"}}</p>
                         </li>
                     </ul>
                     <button class="btn btn-primary" (click)="restart()">RESTART QUIZ</button>
